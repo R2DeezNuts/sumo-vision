@@ -1,0 +1,25 @@
+{
+  "width": 800,
+  "roi_top": 0.6,
+  "roi_bottom": 1.0,
+
+  "contrast_threshold": 18,
+  "absolute_value_threshold": 120,
+  "min_area": 1000,
+  "confidence_stop": 0.18,
+
+  "object_detect_enabled": true,
+  "object_min_area": 1200,
+  "object_dark_value_threshold": 70,
+  "object_dark_value_threshold_max": 95,
+
+  "use_perspective": true,
+  "src_norm": [
+    [0.0, 0.0],
+    [0.0, 0.9],
+    [1.0, 0.0],
+    [1.0, 0.9]
+  ],
+
+  "debug_record_enabled": false
+}
