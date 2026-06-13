@@ -1,0 +1,18 @@
+{
+  "start_enabled": false,
+
+  "conf_min": 0.2,
+  "deadband_px": 15,
+  "min_delta": 1,
+  "max_delta": 10,
+  "kp": 0.06,
+  "ki": 0.001,
+  "kd": 0.001,
+
+  "box_eject_enabled": true,
+  "box_trigger_min_area": 10000,
+  "box_approach_frames": 70,
+  "box_push_frames": 70,
+  "box_rejoin_back_frames": 70,
+  "box_cooldown_frames": 20
+}
