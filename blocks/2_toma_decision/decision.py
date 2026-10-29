@@ -247,7 +247,7 @@ class DecisionMaker:
         if proc_result is None:
             self._reset_pid()
             self._reset_corner()
-            return ACTION_FORWARD, None
+            return ACTION_STOP, None
 
         reason = str(proc_result.get("reason", ""))
         confidence = float(proc_result.get("confidence", 0.0))
@@ -299,6 +299,10 @@ class DecisionMaker:
         return ACTION_CURVE_RIGHT, delta
 
     def _auto_action(self, proc_result):
+        if proc_result is None:
+            self._reset_box_eject()
+            return self._line_follow_action(None)
+
         if self.box_eject_enabled:
             if self._box_state == "idle" and self._box_cooldown_remaining > 0:
                 self._box_cooldown_remaining -= 1

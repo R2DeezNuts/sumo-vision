@@ -1,0 +1,4 @@
+-r requirements.txt
+-r entrega/requirements-docs.txt
+platformio==6.1.19
+pip-audit==2.10.1

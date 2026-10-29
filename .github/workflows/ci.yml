@@ -1,0 +1,46 @@
+name: Comprobaciones
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --only-binary=:all: -r requirements-dev.txt
+      - run: python -m unittest discover -s tests -v
+      - run: sphinx-build -W -b html entrega/docs entrega/docs/_build/html
+      - run: python -m pip_audit -r requirements.txt
+
+  firmware:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        project: [SUMO, SUMO_CAM]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --only-binary=:all: platformio==6.1.19
+      - name: Compilar con configuración de ejemplo
+        env:
+          PROJECT: ${{ matrix.project }}
+        run: |
+          cp "$PROJECT/.env.example" "$PROJECT/.env"
+          pio run -d "$PROJECT"
