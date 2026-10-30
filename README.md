@@ -1,8 +1,14 @@
 # Sumo Vision
 
+**Robótica móvil · ESP32-CAM · Python · OpenCV · UDP**
+
+[Demo](https://r2deeznuts.github.io/img/sumo-vision-preview.mp4) · [Guía de uso](GUIA.md) · [Memoria](Docs/memoria_final.pdf) · [Portfolio](https://r2deeznuts.github.io/)
+
 Reutilicé un robot de sumo para un prototipo quitanieves que localiza y retira obstáculos dentro de un área delimitada. Integré las imágenes de una ESP32-CAM con OpenCV y la lógica que envía las órdenes de movimiento al robot mediante UDP.
 
 El prototipo retiró obstáculos de forma autónoma. La [demostración](https://r2deeznuts.github.io/img/sumo-vision-preview.mp4) muestra su funcionamiento sobre la plataforma física.
+
+[![Prototipo de Sumo Vision durante la demostración](entrega/paper/figures/demo_frame.png)](https://r2deeznuts.github.io/img/sumo-vision-preview.mp4)
 
 ## Funcionamiento
 
