@@ -64,10 +64,8 @@ limitaciones de control y red en la [guía](GUIA.md) antes de usar el robot.
 python -m unittest discover -s tests -v
 ```
 
-El flujo de GitHub Actions ejecuta las pruebas de Python, construye la
-documentación, consulta vulnerabilidades de las dependencias y compila ambos
-firmwares con configuraciones de ejemplo. Estas comprobaciones no sustituyen
-la prueba del robot físico ni la calibración de motores y visión.
+Estas pruebas no sustituyen la prueba del robot físico ni la calibración
+de motores y visión.
 
 ## Documentación
 
